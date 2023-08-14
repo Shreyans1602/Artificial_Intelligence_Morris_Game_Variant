@@ -1,0 +1,215 @@
+Static Estimation Improvement Comments:
+
+To improve the given static estimation function, I decided to give a priority to the positions which are likely to make a mill. In the original function given in handout, static estimation is calculated by subtracting number of black pieces from the number of white pieces in the opening phase wheras we also use the number of black moves in the midgame phase. However, the position to be selected did not have any priority. So my considering the number of mills in the static estimate calculation, I ensure the position with a possibility of mill formation gets picked first.
+
+Results on running the programs:
+
+1. Results for all 8 program's working:
+
+MiniMaxOpening:
+
+Input board: WWxxxxxWWWWBBBBxxBWBxB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxOpening input.txt output.txt 1
+Board Position: WWWxxxxWWWWxBBBxxBWBxB
+Positions evaluated by static estimation: 20.
+MINIMAX estimate: 2.
+
+Input board: WWxxxxxWWWBBBxBxxBWBBB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxOpening input.txt output.txt 1
+Board Position: WWWxxxxWWWBBBxBxxBWBBB
+Positions evaluated by static estimation: 8.
+MINIMAX estimate: -1.
+
+MiniMaxGame:
+
+Input board: WWxxxxxWWWWBBBBxxBWBxB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxGame input.txt output.txt 1
+Board Position: WWxxxxxWWWWBBBBWxxxBxB
+Positions evaluated by static estimation: 16.
+MINIMAX estimate: 991.
+
+Input board: WWxxxxxWWWBBBxBxxBWBBB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxGame input.txt output.txt 1
+Board Position: WWxxxxxWxWBBBxBxWBWBBB
+Positions evaluated by static estimation: 10.
+MINIMAX estimate: -2005.
+
+MiniMaxOpeningBlack:
+
+Input board: WWxxxxxWWWWBBBBxxBWBxB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxOpeningBlack input.txt output.txt 1
+Board Position: xWBxxxxWWWWBBBBxxBWBxB
+Positions evaluated by static estimation: 32.
+MINIMAX estimate: -2.
+
+Input board: WWxxxxxWWWBBBxBxxBWBBB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxOpeningBlack input.txt output.txt 1
+Board Position: xWBxxxxWWWBBBxBxxBWBBB
+Positions evaluated by static estimation: 13.
+MINIMAX estimate: -4.
+
+MiniMaxGameBlack:
+
+Input board: WWxxxxxWWWWBBBBxxBWBxB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxGameBlack input.txt output.txt 1 
+Board Position: WWxxxxxWWWWBBBBxxBxBBx
+Positions evaluated by static estimation: 33.
+MINIMAX estimate: -1020.
+
+Input board: WWxxxxxWWWBBBxBxxBWBBB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxGameBlack input.txt output.txt 1
+Board Position: WWBxxxxWWWBBxxBxxBWBBB
+Positions evaluated by static estimation: 7.
+MINIMAX estimate: -2025.
+
+MiniMaxOpeningImproved:
+
+Input board: WWxxxxxWWWWBBBBxxBWBxB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxOpeningImproved input.txt output.txt 1
+Board Position: WWWxxxxWWWWxBBBxxBWBxB
+Positions evaluated by static estimation: 20.
+MINIMAX estimate: 5.
+
+Input board: WWxxxxxWWWBBBxBxxBWBBB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxOpeningImproved input.txt output.txt 1
+Board Position: WWWxxxxWWWBBBxBxxBWBBB
+Positions evaluated by static estimation: 8.
+MINIMAX estimate: 2.
+
+MiniMaxGameImproved:
+
+Input board: WWxxxxxWWWWBBBBxxBWBxB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxGameImproved input.txt output.txt 1 
+Board Position: WWxxxxxWWWWBBBBWxxxBxB
+Positions evaluated by static estimation: 16.
+MINIMAX estimate: 7.
+
+Input board: WWxxxxxWWWBBBxBxxBWBBB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxGameImproved input.txt output.txt 1
+Board Position: WWxxxxWxWWBBBxBxxBWBBB
+Positions evaluated by static estimation: 10.
+MINIMAX estimate: 3.
+
+ABOpening:
+
+Input board: WWxxxxxWWWWBBBBxxBWBxB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./ABOpening input.txt output.txt 1 
+Board Position: WWWxxxxWWWWxBBBxxBWBxB
+Positions evaluated by static estimation: 20.
+AB estimate: 2.
+
+Input board: WWxxxxxWWWBBBxBxxBWBBB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./ABOpening input.txt output.txt 1
+Board Position: WWWxxxxWWWBBBxBxxBWBBB
+Positions evaluated by static estimation: 8.
+AB estimate: -1.
+
+ABGame:
+
+Input board: WWxxxxxWWWWBBBBxxBWBxB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./ABGame input.txt output.txt 1 
+Board Position: WWxxxxxWWWWBBBBWxxxBxB
+Positions evaluated by static estimation: 16.
+AB estimate: 991.
+
+Input board: WWxxxxxWWWBBBxBxxBWBBB
+Depth: 1
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./ABGame input.txt output.txt 1
+Board Position: WWxxxxxWxWBBBxBxWBWBBB
+Positions evaluated by static estimation: 10.
+AB estimate: -2005.
+
+2. Results for static estimation function improvement:
+
+MiniMaxOpening:
+
+Input board: WWxxxxxWWWWBBBBxxBWBxB
+Depth: 3
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxOpening input.txt output.txt 3
+Board Position: WWxxxxxWWWWBBBBWxBWBxx
+Positions evaluated by static estimation: 5614.
+MINIMAX estimate: 2.
+
+MiniMaxOpeningImproved:
+
+Input board: WWxxxxxWWWWBBBBxxBWBxB
+Depth: 3
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxOpeningImproved input.txt output.txt 3 
+Board Position: WWxxxxxWWWWBBBBWxBWBxx
+Positions evaluated by static estimation: 5614.
+MINIMAX estimate: 5.
+
+MiniMaxGame:
+
+Input board: WWxxxxxWWWBBBxBxxBWBBB
+Depth: 3
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxGame input.txt output.txt 3        
+Board Position: WWxWxxxWxWBBBxBxxBWBBB
+Positions evaluated by static estimation: 755.
+MINIMAX estimate: -1009.
+
+MiniMaxGameImproved:
+
+Input board: WWxxxxxWWWBBBxBxxBWBBB
+Depth: 3
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxGameImproved input.txt output.txt 3
+Board Position: WWxxxxWxWWBBBxBxxBWBBB
+Positions evaluated by static estimation: 755.
+MINIMAX estimate: 2.
+
+Reason to believe it is better: When the opponent is more than one step to form a mill and we have a position with possibility of mill formation, we can use it to our advantage if it is picked, which is done by the improved static estimate function. By picking the position where we can form a mill, we can ossilate our pieces and keep removing black pieces not allowing the black pieces to form a mill.
+
+3. Results for minimax vs the ab algorithm:
+
+MiniMaxOpening:
+
+Input board: WWxxxxxWWWWBBBBxxBWBxB
+Depth: 3
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxOpening input.txt output.txt 3        
+Board Position: WWxxxxxWWWWBBBBWxBWBxx
+Positions evaluated by static estimation: 5614.
+MINIMAX estimate: 2.
+
+ABOpening:
+
+Input board: WWxxxxxWWWWBBBBxxBWBxB
+Depth: 3
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./ABOpening input.txt output.txt 3
+Board Position: WWxxxxxWWWWBBBBWxBWBxx
+Positions evaluated by static estimation: 484.
+AB estimate: 2.
+
+MiniMaxGame:
+
+Input board: WWxxxxxWWWBBBxBxxBWBBB
+Depth: 3
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./MiniMaxGame input.txt output.txt 3        
+Board Position: WWxWxxxWxWBBBxBxxBWBBB
+Positions evaluated by static estimation: 755.
+MINIMAX estimate: -1009.
+
+ABGame:
+
+Input board: WWxxxxxWWWBBBxBxxBWBBB
+Depth: 3
+shreyans@Shreyans-MacBook-Air Artificial_Intelligence_Game_Project % ./ABGame input.txt output.txt 3
+Board Position: WWxWxxxWxWBBBxBxxBWBBB
+Positions evaluated by static estimation: 343.
+AB estimate: -1009.
+
+Note: As it is clearly visible, AB produces savings over MiniMax
